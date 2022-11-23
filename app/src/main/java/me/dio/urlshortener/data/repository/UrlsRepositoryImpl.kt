@@ -1,4 +1,4 @@
-package me.dio.urlshortener.data
+package me.dio.urlshortener.data.repository
 
 import kotlinx.coroutines.flow.Flow
 import me.dio.urlshortener.data.datasource.UrlShortenerDataSource
