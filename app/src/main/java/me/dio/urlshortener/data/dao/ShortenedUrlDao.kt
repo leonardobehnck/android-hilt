@@ -11,6 +11,6 @@ interface ShortenedUrlDao {
     @Insert
     fun insert(url: ShortenedUrlModel)
 
-    @Query("SELECT * FROM url")
+    @Query("SELECT * FROM url ORDER BY id DESC")
     fun getAll(): Flow<List<ShortenedUrlModel>>
 }

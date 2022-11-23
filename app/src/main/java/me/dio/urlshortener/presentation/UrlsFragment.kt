@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import dagger.hilt.android.AndroidEntryPoint
 import me.dio.urlshortener.core.Event
 import me.dio.urlshortener.core.createDialog
 import me.dio.urlshortener.core.createProgressDialog
@@ -19,6 +20,7 @@ import me.dio.urlshortener.databinding.FragmentUrlsBinding
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
+@AndroidEntryPoint
 class UrlsFragment : Fragment() {
 
     private var _binding: FragmentUrlsBinding? = null
@@ -29,9 +31,7 @@ class UrlsFragment : Fragment() {
 
     private var progressDialog: AlertDialog? = null
 
-    private val viewModel: UrlsViewModel by viewModels {
-        ViewModelFactory()
-    }
+    private val viewModel: UrlsViewModel by viewModels()
 
     private val urlsAdapter = UrlsAdapter()
 

@@ -4,8 +4,9 @@ import kotlinx.coroutines.flow.Flow
 import me.dio.urlshortener.data.datasource.UrlShortenerDataSource
 import me.dio.urlshortener.domain.ShortenedUrl
 import me.dio.urlshortener.domain.UrlsRepository
+import javax.inject.Inject
 
-class UrlsRepositoryImpl(
+class UrlsRepositoryImpl @Inject constructor(
     private val localDataSource: UrlShortenerDataSource.Local,
     private val remoteDataSource: UrlShortenerDataSource.Remote,
 ) : UrlsRepository {

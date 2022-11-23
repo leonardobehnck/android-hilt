@@ -8,8 +8,9 @@ import me.dio.urlshortener.data.dao.ShortenedUrlDao
 import me.dio.urlshortener.data.datasource.UrlShortenerDataSource
 import me.dio.urlshortener.data.model.ShortenedUrlModel
 import me.dio.urlshortener.domain.ShortenedUrl
+import javax.inject.Inject
 
-class UrlShortenerLocalDataSource(
+class UrlShortenerLocalDataSource @Inject constructor(
     private val dao: ShortenedUrlDao,
 ) : UrlShortenerDataSource.Local {
     override fun getAll(): Flow<List<ShortenedUrl>> = dao.getAll().map { items ->

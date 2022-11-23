@@ -7,8 +7,9 @@ import me.dio.urlshortener.data.net.HideUriService
 import me.dio.urlshortener.domain.ShortenedUrl
 import retrofit2.HttpException
 import java.net.HttpURLConnection
+import javax.inject.Inject
 
-class UrlShortenerRemoteDataSource(
+class UrlShortenerRemoteDataSource @Inject constructor(
     private val service: HideUriService,
 ) : UrlShortenerDataSource.Remote {
     override suspend fun create(url: String): ShortenedUrl {
